@@ -1,0 +1,35 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light shadow">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">🌴 La Belle Plante</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a routerLink="home" routerLinkActive="active-custom" class="nav-link"
+          >Accueil</a
+        >
+
+        <a class="nav-link">Panier</a>
+        <a class="nav-link disabled">Plus d'option bientôt</a>
+        <a class="nav-link disabled" *ngIf="likeCounter == 0">
+          Pas de plante likée</a
+        >
+        <a class="nav-link disabled" *ngIf="likeCounter == 1"
+          >Plante likée : {{ likeCounter }}</a
+        >
+        <a class="nav-link disabled" *ngIf="likeCounter > 1"
+          >Plantes likées : {{ likeCounter }}</a
+        >
+      </div>
+    </div>
+  </div>
+</nav>

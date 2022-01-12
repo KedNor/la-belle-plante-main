@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row py-3 d-flex justify-content-center">
+    <div class="d-flex justify-content-end">
+      <app-icon
+        class="like"
+        [iconName]="'heart'"
+        [iconColor]="'#e35d6a'"
+        [iconSize]="2"
+      ></app-icon>
+    </div>
+    <div class="col-3">
+      <img
+        class="w-100"
+        src="{{ detailPlant.product_url_picture }}"
+        alt="Image de {{ detailPlant.product_name }}"
+      />
+    </div>
+    <div class="col-12 flex-column d-flex justify-content-center">
+      <h2 class="col text-center">
+        {{ detailPlant.product_name }}
+      </h2>
+
+      <p class="col text-center">
+        Catégorie :
+        <strong>{{ detailPlant.product_breadcrumb_label }}</strong>
+      </p>
+    </div>
+    <div class="bg-light p-3">
+      <h5>Descriptif :</h5>
+      <p>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum."
+      </p>
+    </div>
+    <div class="row footer">
+      <div class="col d-flex justify-content-center align-self-center">
+        <app-avis-bar [starColor]="detailPlant.product_rating"></app-avis-bar>
+      </div>
+      <div class="col text-center">
+        <p class="col">Quantités restantes : {{ detailPlant.product_qty }}</p>
+        <h3 class="col">{{ detailPlant.product_price }} €</h3>
+      </div>
+      <div class="col d-flex justify-content-center align-self-center">
+        <a href="#" class="btn btn-success">Pour moi !</a>
+      </div>
+    </div>
+  </div>
+</div>

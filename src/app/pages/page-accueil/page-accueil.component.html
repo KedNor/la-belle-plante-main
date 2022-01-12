@@ -1,0 +1,56 @@
+<div class="d-flex align-items-stretch">
+  <app-filter-side-bar
+    [listCategories]="listCategoriesFilter"
+    (clickCategory)="searchAllJb($event, null, null, null)"
+    (tabPrice)="searchAllJb(null, $event, null, null)"
+    (ratingClick)="searchAllJb(null, null, $event, null)"
+  ></app-filter-side-bar>
+
+  <div class="custom-main container p-3">
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Recherche ta belle plante"
+      aria-label="Input Recherche ta belle plante"
+      (input)="searchAllJb(null, null, null, $event)"
+    />
+
+    <div class="py-3">
+      Trier par :
+      <button class="btn btn-outline-success btn-sm me-2" (click)="sortPrix()">
+        <app-icon
+          [iconName]="
+            arowPrix ? 'bi bi-chevron-double-up' : 'bi bi-chevron-double-down'
+          "
+          [iconSize]="1"
+        ></app-icon>
+        Prix
+      </button>
+      <button class="btn btn-outline-success btn-sm me-2" (click)="sortAlpha()">
+        <app-icon
+          [iconName]="
+            arowOrdre ? 'bi bi-chevron-double-up' : 'bi bi-chevron-double-down'
+          "
+          [iconSize]="1"
+        ></app-icon>
+        Ordre Alpha
+      </button>
+      <button class="btn btn-outline-success btn-sm me-2" (click)="sortAvis()">
+        <app-icon
+          [iconName]="
+            arowAvis ? 'bi bi-chevron-double-up' : 'bi bi-chevron-double-down'
+          "
+          [iconSize]="1"
+        ></app-icon>
+        Avis
+      </button>
+    </div>
+
+    <div class="row">
+      <div class="col" *ngFor="let product of listData">
+        <app-card-plante [plant]="product" (clickLike)="onEventLike()">
+        </app-card-plante>
+      </div>
+    </div>
+  </div>
+</div>
